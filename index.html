@@ -4,5 +4,20 @@
     <input type="text" name="song-name" placeholder="What's your song?"/>
     <input type="submit" value="Submit" id="Form-submit"/>
   </form>
+<script>
+// POST form data to zapier on submit
+$('#myForm').submit(function(e){
+    e.preventDefault();
+    $.ajax({
+        url:'https://hooks.zapier.com/hooks/catch/835758/ouz6lbw/',
+        type:'post',
+        data:$('#myForm').serialize(),
+        success:function(){
+         // Redirect to another ssuccess page
+          window.location = "#";
+        }
+    });
+});
+</script>
 </body>
 </html>
